@@ -32,3 +32,9 @@ If I try to open the homepage in a second window while the first one is loading 
 This showed me why single threaded servers are not efficient for multiple users.
 
 ### Commit 5
+![commit5.png](assets/image/commit5.png)
+In the final milestone, I make the server multithreaded based on the rust programming book given in the pdf. 
+Instead of handling one connection at a time, using a ThreadPool will manage multiple connections simultaneously.
+When a new request comes in, the server now assigns the task to a worker thread from the pool. 
+This solves the problem from the previous commit.
+With it now, a slow request like /sleep will not block other users from accessing the homepage, because each request is handled by a different thread.
