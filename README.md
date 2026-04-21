@@ -24,5 +24,11 @@ However, if the request was for anything else, the server would return a 404 NOT
 This taught me how to handle basic routing and how to manage errors when a page does not exist.
 
 ### Commit 4
+In this milestone i learned about the limitations of a single threaded server
+Here i added a new path, /sleep, that uses thread::sleep to pause the server for about 10 seconds before responding.
+After i try to run it and visit the page, i noticed that while the server is "sleeping" for one window,
+it cannot handle any other requests.
+If I try to open the homepage in a second window while the first one is loading /sleep, the second window has to wait until the 10 seconds are over.
+This showed me why single threaded servers are not efficient for multiple users.
 
 ### Commit 5
